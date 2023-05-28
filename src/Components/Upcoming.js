@@ -4,12 +4,12 @@ import RightSidebar from './RightSidebar';
 import LeftSidebar from './LeftSidebar';
 import { StyledDisplay, StyledCardLink } from '../style/style';
 
-function Popular({ rendered }) {
-  const { popularAnime, isSearch, searchResults } = useGlobalContext();
+function Upcoming({ rendered }) {
+  const { upcomingAnime, isSearch, searchResults } = useGlobalContext();
 
   const conditionalRender = () => {
-    if (!isSearch && rendered === 'popular') {
-      return popularAnime?.map((anime) => (
+    if (!isSearch && rendered === 'upcoming') {
+      return upcomingAnime?.map((anime) => (
         <StyledCardLink to={`/anime/${anime.mal_id}`} key={anime.mal_id}>
           <img src={anime.images.jpg.large_image_url} alt="" />
           <div className="title">{anime.title}</div> 
@@ -36,4 +36,4 @@ function Popular({ rendered }) {
   );
 }
 
-export default Popular;
+export default Upcoming;
