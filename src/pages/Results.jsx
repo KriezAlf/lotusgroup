@@ -1,12 +1,8 @@
+// Results.jsx
 import React, { useContext, useState } from 'react';
 import { SearchContext } from '../context/search';
-import { Input } from '@chakra-ui/react';
-import { IconButton } from '@chakra-ui/react';
+import { Input, IconButton, FormControl, FormLabel } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
-import {
-  FormControl,
-  FormLabel,
-} from '@chakra-ui/react';
 
 const Results = () => {
   const [input, setInput] = useState('');
@@ -23,8 +19,8 @@ const Results = () => {
   };
 
   return (
-    <form>
-      <FormControl type="submit">
+    <form onSubmit={handleSearch}>
+      <FormControl>
         <FormLabel>Search Anime</FormLabel>
         <Input
           placeholder="Search Anime..."
@@ -32,12 +28,11 @@ const Results = () => {
           onChange={(event) => setInput(event.target.value)}
         />
         <IconButton
-          aria-label='Search database'
+          aria-label="Search database"
           icon={<SearchIcon />}
-          colorScheme='blue'
+          colorScheme="blue"
           disabled={!input}
-          onClick={handleSearch}
-          type='submit'
+          type="submit"
         />
       </FormControl>
     </form>
