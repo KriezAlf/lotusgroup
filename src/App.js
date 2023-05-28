@@ -31,9 +31,20 @@ function App() {
   };
 
   const search = async (searchTerm) => {
-    return fetch(`https://api.jikan.moe/v4/anime?q=${searchTerm}&sfw=true`)
-      .then((response) => response.json());
+    try {
+      const response = await fetch(`https://api.jikan.moe/v4/anime?q=${searchTerm}&sfw=true`);
+      if (!response.ok) {
+        throw new Error('Search request failed');
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error occurred during search:', error);
+      // Return an empty or error response object as needed
+      return { results: [] };
+    }
   };
+  
   
 
 
