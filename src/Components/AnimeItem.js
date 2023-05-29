@@ -59,53 +59,55 @@ function AnimeItem() {
       <h1>{title}</h1>
       <Box className="details">
         <Box p={4} display={{ md: 'flex' }}>
-          <Box flexShrink={0}>
+          <Box flexShrink={0} maxWidth={{ md: '40%' }}>
             <Box className="detail">
               <Box className="image">
                 <img src={images?.jpg.large_image_url} alt="" />
               </Box>
-              <Box className="anime-details">
-                <Text>
-                  <Text as="span">Aired:</Text>
-                  <Text as="span">{aired?.string}</Text>
-                </Text>
-                <Text>
-                  <Text as="span">Rating:</Text>
-                  <Text as="span">{rating}</Text>
-                </Text>
-                <Text>
-                  <Text as="span">Rank:</Text>
-                  <Text as="span">{rank}</Text>
-                </Text>
-                <Text>
-                  <Text as="span">Score:</Text>
-                  <Text as="span">{score}</Text>
-                </Text>
-                <Text>
-                  <Text as="span">Scored By:</Text>
-                  <Text as="span">{scored_by}</Text>
-                </Text>
-                <Text>
-                  <Text as="span">Popularity:</Text>
-                  <Text as="span">{popularity}</Text>
-                </Text>
-                <Text>
-                  <Text as="span">Status:</Text>
-                  <Text as="span">{status}</Text>
-                </Text>
-                <Text>
-                  <Text as="span">Source:</Text>
-                  <Text as="span">{source}</Text>
-                </Text>
-                <Text>
-                  <Text as="span">Season:</Text>
-                  <Text as="span">{season}</Text>
-                </Text>
-                <Text>
-                  <Text as="span">Duration:</Text>
-                  <Text as="span">{duration}</Text>
-                </Text>
-              </Box>
+            </Box>
+          </Box>
+          <Box ml={{ md: '4' }} flex={{ md: '1' }}>
+            <Box className="anime-details">
+              <Text>
+                <Text as="span">Aired:</Text>
+                <Text as="span">{aired?.string}</Text>
+              </Text>
+              <Text>
+                <Text as="span">Rating:</Text>
+                <Text as="span">{rating}</Text>
+              </Text>
+              <Text>
+                <Text as="span">Rank:</Text>
+                <Text as="span">{rank}</Text>
+              </Text>
+              <Text>
+                <Text as="span">Score:</Text>
+                <Text as="span">{score}</Text>
+              </Text>
+              <Text>
+                <Text as="span">Scored By:</Text>
+                <Text as="span">{scored_by}</Text>
+              </Text>
+              <Text>
+                <Text as="span">Popularity:</Text>
+                <Text as="span">{popularity}</Text>
+              </Text>
+              <Text>
+                <Text as="span">Status:</Text>
+                <Text as="span">{status}</Text>
+              </Text>
+              <Text>
+                <Text as="span">Source:</Text>
+                <Text as="span">{source}</Text>
+              </Text>
+              <Text>
+                <Text as="span">Season:</Text>
+                <Text as="span">{season}</Text>
+              </Text>
+              <Text>
+                <Text as="span">Duration:</Text>
+                <Text as="span">{duration}</Text>
+              </Text>
             </Box>
           </Box>
         </Box>

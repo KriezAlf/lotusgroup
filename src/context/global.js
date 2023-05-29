@@ -115,6 +115,7 @@ export const GlobalContextProvider = ({children}) => {
     React.useEffect(() => {
         getPopularAnime();
         getAiringAnime();
+        getUpcomingAnime();
     }, [])
 
     return(

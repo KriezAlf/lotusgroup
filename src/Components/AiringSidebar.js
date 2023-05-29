@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { SidebarStyled } from '../style/style';
 function Sidebar() {
     const {airingAnime} = useGlobalContext()
-
     const sorted = airingAnime?.sort((a,b) => {
         return b.score - a.score
     })
