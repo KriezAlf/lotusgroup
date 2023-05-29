@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGlobalContext } from '../context/global';
-import RightSidebar from './RightSidebar';
-import LeftSidebar from './LeftSidebar';
+import RightSidebar from './PopularSidebar';
+import LeftSidebar from './UpcomingSidebar';
 import { StyledDisplay, StyledCardLink } from '../style/style';
 
 function Airing({ rendered }) {

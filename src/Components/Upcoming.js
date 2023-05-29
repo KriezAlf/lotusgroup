@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGlobalContext } from '../context/global';
-import RightSidebar from './RightSidebar';
-import LeftSidebar from './LeftSidebar';
+import RightSidebar from './AiringSidebar';
+import LeftSidebar from './PopularSidebar';
 import { StyledDisplay, StyledCardLink } from '../style/style';
 
 function Upcoming({ rendered }) {

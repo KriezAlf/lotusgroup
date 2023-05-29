@@ -45,7 +45,7 @@ export const StyledCardLink = styled(Link)`
   }
 
   .title {
-    padding: 1rem;
+    padding: 0.2rem;
     font-weight: bold;
   }
 `;
@@ -95,7 +95,7 @@ padding: 3rem 2rem;
   a {
     font-weight: 600;
     text-decoration: none;
-    color: #eb5757;
+    color: #bbbbbb;
     display: flex;
     align-items: center;
     gap: 0.5rem;
