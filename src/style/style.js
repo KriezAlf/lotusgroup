@@ -56,6 +56,7 @@ border-top: 5px solid #bbbbbb;
 padding-right: 5rem;
 padding-left: 5rem;
 padding-top: 1rem;
+
 .anime{
     display: flex;
     flex-direction: column;
@@ -64,7 +65,12 @@ padding-top: 1rem;
         width: 100%;
         border-radius: 5px;
         border: 5px solid #bbbbbb;
+        &:focus,
+  &:hover {
+    outline: none;
+    box-shadow: 0 0 5px 2px #27ae60;
     }
+  }
     a{
         margin-top: 1rem;
         display: flex;
