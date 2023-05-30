@@ -11,8 +11,6 @@ const Logo = () => {
     position: "absolute",
     width: "60px",
     height: "49px",
-    left: "61px",
-    top: "37px",
   };
 
   return (
@@ -80,15 +78,29 @@ function Home() {
         transition="all .4s ease-in-out"
       >
         <Flex direction="column" align="center" mb="2rem">
-          <h1>
-            {rendered === "popular"
-              ? "Popular Anime"
-              : rendered === "airing"
-              ? "Airing Anime"
-              : "Upcoming Anime"}
+          <h1
+            style={{
+              position: "absolute",
+              width: "261px",
+              height: "96px",
+              top: "15px",
+              fontFamily: "Actor",
+              fontStyle: "normal",
+              fontWeight: "200",
+              fontSize: "30px",
+              textAlign: "center",
+              letterSpacing: "0.05em",
+            }}
+          >
+            Our List
           </h1>
         </Flex>
-        <Flex align="center" justify="center" gap="1rem">
+        <Flex
+          align="center"
+          justify="center"
+          gap="1rem"
+          top="125px" // Add the top property here
+        >
           <Button
             onClick={() => handleRenderedChange("popular")}
             variant="outline"
@@ -115,11 +127,30 @@ function Home() {
               placeholder="Search Anime"
               value={search}
               onChange={handleChange}
-              borderRadius="30px"
-              border="5px solid #e5e7eb"
+              style={{
+                position: "absolute",
+                width: "418px",
+                height: "30px",
+                background: "#D9D9D9",
+                mixBlendMode: "normal",
+                borderRadius: "5px",
+                top: "110px",
+              }}
               size="md"
             />
-            <Button type="submit">Search</Button>
+            <Button
+              type="submit"
+              style={{
+                position: "absolute",
+                borderRadius: "5px",
+                left: "600px",
+                top: "110px",
+
+                height: "30px",
+              }}
+            >
+              Search
+            </Button>
           </Flex>
         </Box>
       </Box>
