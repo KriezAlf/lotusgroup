@@ -129,6 +129,15 @@ function Home() {
           >
             Upcoming
           </Button>
+          <Button
+            onClick={() => handleRenderedChange("upcoming")}
+            variant="outline"
+            style={{
+              color: "white",
+            }}
+          >
+            About Us
+          </Button>
         </Flex>
         <Box as="form" onSubmit={handleSubmit}>
           <Flex align="center">
