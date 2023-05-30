@@ -1,9 +1,10 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
-import Caroline from "./Image/CAROLINE (1).jpg";
-import GambarLogo from "./Image/logo lotus.png";
-import GambarContoh from "./Image/Illustration.jpg";
+import Caroline from "./Image/Caroline.jpg";
+import Michael from "./Image/Michael.jpeg";
+import Steven from "./Image/Steven.jpg";
+import Reynata from "./Image/Reynata.jpg";
 
 function CardComponent() {
   return (
@@ -11,7 +12,7 @@ function CardComponent() {
       <div className="row">
         <div className="col">
           <div className="card" style={{ width: "18rem" }}>
-            <img src="..." className="card-img-top" alt="..." />
+            <img src={Caroline} className="card-img-top" alt="..." />
             <div className="card-body">
               <h1>Caroline Susanto (00000071280) </h1>
               <p className="card-text">
@@ -21,7 +22,7 @@ function CardComponent() {
             </div>
           </div>
           <div className="card" style={{ width: "18rem" }}>
-            <img src="..." className="card-img-top" alt="..." />
+            <img src={Steven} className="card-img-top" alt="..." />
             <div className="card-body">
               <h1>Ignatius Steven (00000070642) </h1>
               <p className="card-text">
@@ -36,7 +37,7 @@ function CardComponent() {
       <div className="row2">
         <div className="col2">
           <div className="card" style={{ width: "18rem" }}>
-            <img src="..." className="card-img-top" alt="..." />
+            <img src={Michael} className="card-img-top" alt="..." />
             <div className="card-body">
               <h1>Michael Vallent (00000071361) </h1>
               <p className="card-text">
@@ -46,7 +47,7 @@ function CardComponent() {
             </div>
           </div>
           <div className="card" style={{ width: "18rem" }}>
-            <img src="..." className="card-img-top" alt="..." />
+            <img src={Reynata} className="card-img-top" alt="..." />
             <div className="card-body">
               <h1>Reynata Prajnadi Tangajaya (00000070461)</h1>
               <p className="card-text">
