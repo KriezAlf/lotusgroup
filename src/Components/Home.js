@@ -68,7 +68,7 @@ function Home() {
   };
 
   return (
-    <Box style={{ backgroundColor: "gray" }}>
+    <Box style={{ backgroundColor: "Black" }}>
       <MyComponent /> {/* Include the MyComponent here */}
       <Box
         py="2rem"
@@ -90,6 +90,7 @@ function Home() {
               fontSize: "30px",
               textAlign: "center",
               letterSpacing: "0.05em",
+              color: "white",
             }}
           >
             Our List
@@ -104,18 +105,27 @@ function Home() {
           <Button
             onClick={() => handleRenderedChange("popular")}
             variant="outline"
+            style={{
+              color: "white",
+            }}
           >
             Popular
           </Button>
           <Button
             onClick={() => handleRenderedChange("airing")}
             variant="outline"
+            style={{
+              color: "white",
+            }}
           >
             Airing
           </Button>
           <Button
             onClick={() => handleRenderedChange("upcoming")}
             variant="outline"
+            style={{
+              color: "white",
+            }}
           >
             Upcoming
           </Button>
@@ -131,10 +141,11 @@ function Home() {
                 position: "absolute",
                 width: "418px",
                 height: "30px",
-                background: "#D9D9D9",
+                background: "white",
                 mixBlendMode: "normal",
                 borderRadius: "5px",
                 top: "110px",
+                left: "350px",
               }}
               size="md"
             />
@@ -143,7 +154,7 @@ function Home() {
               style={{
                 position: "absolute",
                 borderRadius: "5px",
-                left: "600px",
+                left: "800px",
                 top: "110px",
 
                 height: "30px",
