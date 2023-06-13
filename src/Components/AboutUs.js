@@ -1,9 +1,11 @@
-import React from 'react';
-import { Box, Flex, Image, Text } from '@chakra-ui/react';
-import { useGlobalContext } from '../context/global';
-import RightSidebar from './PopularSidebar';
-import LeftSidebar from './UpcomingSidebar';
-import { StyledDisplay, StyledCardLink } from '../style/style';
+import React from "react";
+import { Box, Flex, Image, Text, SimpleGrid } from "@chakra-ui/react";
+import { useGlobalContext } from "../context/global";
+import RightSidebar from "./PopularSidebar";
+import LeftSidebar from "./UpcomingSidebar";
+
+import { SidebarStyled } from "../style/style";
+import { StyledDisplay, StyledCardLink } from "../style/style";
 import Caroline from "../Image/Caroline.jpg";
 import Michael from "../Image/Michael.jpeg";
 import Steven from "../Image/Steven.jpg";
@@ -13,75 +15,127 @@ function AboutUs({ rendered }) {
   const { airingAnime, isSearch, searchResults } = useGlobalContext();
 
   const conditionalRender = () => {
-    if (!isSearch && rendered === 'aboutus') {
+    if (!isSearch && rendered === "aboutus") {
       return (
-        <Flex justifyContent="center">
-          <Flex>
-            <Box borderWidth="1px" borderRadius="lg" overflow="hidden" m="4">
-              <Image src={Caroline} alt="Caroline" />
-              <Box p="4">
-                <Text fontSize="xl" fontWeight="bold">
-                  Caroline Susanto (00000071280)
-                </Text>
-                <Text>
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                </Text>
-              </Box>
+        <SimpleGrid columns={1} spacing="150px">
+          <Box
+            borderWidth="1px"
+            borderRadius="lg"
+            overflow="hidden"
+            display="flex"
+            alignItems="center"
+            p="4"
+          >
+            <Image
+              src={Reynata}
+              alt="Reynata"
+              width="150px"
+              height="auto"
+              mr="4"
+            />
+            <Box>
+              <Text fontSize="xl" fontWeight="bold" mb="2">
+                Reynata Prajnadi Tangajaya (00000070461)
+              </Text>
+              <Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Text>
             </Box>
+          </Box>
 
-            <Box borderWidth="1px" borderRadius="lg" overflow="hidden" m="4">
-              <Image src={Steven} alt="Steven" />
-              <Box p="4">
-                <Text fontSize="xl" fontWeight="bold">
-                  Ignatius Steven (00000070642)
-                </Text>
-                <Text>
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                </Text>
-              </Box>
+          <Box
+            borderWidth="1px"
+            borderRadius="lg"
+            overflow="hidden"
+            display="flex"
+            alignItems="center"
+            p="4"
+          >
+            <Image
+              src={Steven}
+              alt="Steven"
+              width="150px"
+              height="auto"
+              mr="4"
+            />
+            <Box>
+              <Text fontSize="xl" fontWeight="bold" mb="2">
+                Ignatius Steven (00000070642)
+              </Text>
+              <Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Text>
             </Box>
-          </Flex>
+          </Box>
 
-          <Flex>
-            <Box borderWidth="1px" borderRadius="lg" overflow="hidden" m="4">
-              <Image src={Michael} alt="Michael" />
-              <Box p="4">
-                <Text fontSize="xl" fontWeight="bold">
-                  Michael Vallent (00000071361)
-                </Text>
-                <Text>
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                </Text>
-              </Box>
+          <Box
+            borderWidth="1px"
+            borderRadius="lg"
+            overflow="hidden"
+            display="flex"
+            alignItems="center"
+            p="4"
+          >
+            <Image
+              src={Caroline}
+              alt="Caroline"
+              width="150px"
+              height="auto"
+              mr="4"
+            />
+            <Box>
+              <Text fontSize="xl" fontWeight="bold" mb="2">
+                Caroline Susanto (00000071280)
+              </Text>
+              <Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Text>
             </Box>
+          </Box>
 
-            <Box borderWidth="1px" borderRadius="lg" overflow="hidden" m="4">
-              <Image src={Reynata} alt="Reynata" />
-              <Box p="4">
-                <Text fontSize="xl" fontWeight="bold">
-                  Reynata Prajnadi Tangajaya (00000070461)
-                </Text>
-                <Text>
-                  Some quick example text to build on the card title and make up the bulk of the card's content.
-                </Text>
-              </Box>
+          <Box
+            borderWidth="1px"
+            borderRadius="lg"
+            overflow="hidden"
+            display="flex"
+            alignItems="center"
+            p="4"
+          >
+            <Image
+              src={Michael}
+              alt="Michael"
+              width="150px"
+              height="auto"
+              mr="4"
+            />
+            <Box>
+              <Text fontSize="xl" fontWeight="bold" mb="2">
+                Michael Vallent (00000071361)
+              </Text>
+              <Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Text>
             </Box>
-          </Flex>
-        </Flex>
+          </Box>
+        </SimpleGrid>
       );
-    } else {
-      return null;
     }
-  }
+  };
 
   return (
-    <StyledDisplay>
-      <LeftSidebar />
-      <div>
-        {conditionalRender()}
-      </div>
-      <RightSidebar />
-    </StyledDisplay>
+    <SidebarStyled>
+      <Flex>
+        <LeftSidebar />
+        <Box flex="1" mx="4">
+          {conditionalRender()}
+        </Box>
+        <RightSidebar />
+      </Flex>
+    </SidebarStyled>
   );
 }
 

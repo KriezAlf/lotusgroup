@@ -1,31 +1,21 @@
-// Home.js
-import React from 'react';
-import { useGlobalContext } from '../context/global';
-import Popular from './Popular';
-import { Box, Button, Input, Flex } from '@chakra-ui/react';
-import Upcoming from './Upcoming';
-import Airing from './Airing';
-import AboutUs from './AboutUs';
-import LogoImage from '../Image/logo lotus.png';
+import React from "react";
+import { useGlobalContext } from "../context/global";
+import Popular from "./Popular";
+import { Box, Button, Input, Flex } from "@chakra-ui/react";
+import Upcoming from "./Upcoming";
+import Airing from "./Airing";
+import AboutUs from "./AboutUs";
+import LogoImage from "../Image/logo lotus.png";
 
 const Logo = () => {
   const logoStyle = {
-    position: 'absolute',
-    width: '60px',
-    height: '49px',
+    width: "60px",
+    height: "49px",
   };
 
   return (
-    <div className="Gambar">
+    <div className="Gambar" style={{ position: "relative", top: "-15px" }}>
       <img className="Logo" src={LogoImage} alt="Example" style={logoStyle} />
-    </div>
-  );
-};
-
-const MyComponent = () => {
-  return (
-    <div id="Utama">
-      <Logo />
     </div>
   );
 };
@@ -39,21 +29,24 @@ function Home() {
     getAiringAnime,
   } = useGlobalContext();
 
-  const [rendered, setRendered] = React.useState('popular');
+  const [rendered, setRendered] = React.useState("popular");
 
   const switchComponent = () => {
     switch (rendered) {
-      case 'popular':
+      case "popular":
         return <Popular rendered={rendered} />;
-      case 'airing':
+      case "airing":
         return <Airing rendered={rendered} />;
-      case 'upcoming':
+      case "upcoming":
         return <Upcoming rendered={rendered} />;
+      case "aboutus":
+        return <AboutUs rendered={rendered} />;
       default:
         return (
           <>
             <Popular rendered={rendered} />
             <Airing rendered={rendered} />
+            <Upcoming rendered={rendered} />
           </>
         );
     }
@@ -62,122 +55,111 @@ function Home() {
   const handleRenderedChange = (type) => {
     setRendered(type);
 
-    if (type === 'airing') {
+    if (type === "airing") {
       getAiringAnime();
-    } else if (type === 'upcoming') {
+    } else if (type === "upcoming") {
       getUpcomingAnime();
     }
   };
 
   return (
-    <Box style={{ backgroundColor: 'Black' }}>
-      <MyComponent />
-      {/* Include the MyComponent here */}
+    <Box style={{ backgroundColor: "Black" }}>
       <Box
         py="2rem"
-        px={{ base: '1rem', md: '5rem' }}
+        px={{ base: "1rem", md: "5rem" }}
         maxW="60%"
         mx="auto"
         transition="all .4s ease-in-out"
       >
-        <Flex direction="column" align="center" mb="2rem">
+        <Flex direction="column" align="center" mb="0.5rem">
+          <Logo />
           <h1
             style={{
-              position: 'absolute',
-              width: '261px',
-              height: '96px',
-              top: '15px',
-              fontFamily: 'Actor',
-              fontStyle: 'normal',
-              fontWeight: '200',
-              fontSize: '30px',
-              textAlign: 'center',
-              letterSpacing: '0.05em',
-              color: 'white',
+              width: "261px",
+              height: "96px",
+              fontFamily: "Actor",
+              fontStyle: "normal",
+              fontWeight: "200",
+              fontSize: "30px",
+              textAlign: "center",
+              letterSpacing: "0.05em",
+              color: "white",
+              position: "relative",
+              top: "-15px",
             }}
           >
             Our List
           </h1>
         </Flex>
-        <Flex align="center" justify="center" gap="1rem" top="125px">
-          {/* Add the top property here */}
+        <Flex
+          align="center"
+          justify="center"
+          gap="1rem"
+          top="20px"
+          mb="0.5rem"
+          flexWrap="wrap"
+        >
           <Button
-            onClick={() => handleRenderedChange('popular')}
+            onClick={() => handleRenderedChange("popular")}
             variant="outline"
             style={{
-              color: 'white',
+              color: "white",
             }}
           >
             Popular
           </Button>
           <Button
-            onClick={() => handleRenderedChange('airing')}
+            onClick={() => handleRenderedChange("airing")}
             variant="outline"
             style={{
-              color: 'white',
+              color: "white",
             }}
           >
             Airing
           </Button>
           <Button
-            onClick={() => handleRenderedChange('upcoming')}
+            onClick={() => handleRenderedChange("upcoming")}
             variant="outline"
             style={{
-              color: 'white',
+              color: "white",
             }}
           >
             Upcoming
           </Button>
           <Button
-            onClick={() => handleRenderedChange('aboutus')}
-            variant="outline"
+            onClick={() => handleRenderedChange("aboutus")}
+            variant={rendered === "aboutus" ? "solid" : "outline"} // Menggunakan variant solid saat aboutus dipilih
             style={{
-              color: 'white',
+              color: "white",
             }}
           >
             About Us
           </Button>
         </Flex>
         <Box as="form" onSubmit={handleSubmit}>
-          <Flex align="center">
+          <Flex align="center" justify="center">
             <Input
               type="text"
               placeholder="Search Anime"
               value={search}
               onChange={handleChange}
               style={{
-                position: 'absolute',
-                width: '418px',
-                height: '30px',
-                background: 'white',
-                mixBlendMode: 'normal',
-                borderRadius: '5px',
-                top: '110px',
-                left: '350px',
+                width: "418px",
+                height: "30px",
+                background: "white",
+                mixBlendMode: "normal",
+                borderRadius: "5px",
+                marginRight: "1rem",
               }}
               size="md"
             />
-            <Button
-              type="submit"
-              style={{
-                position: 'absolute',
-                borderRadius: '5px',
-                left: '800px',
-                top: '110px',
-
-                height: '30px',
-              }}
-            >
+            <Button type="submit" height="30px">
               Search
             </Button>
           </Flex>
         </Box>
       </Box>
-      {rendered !== 'aboutus' ? (
-        switchComponent()
-      ) : (
-        <AboutUs rendered={true} />
-      )}
+      {switchComponent()}
     </Box>
   );
 }
